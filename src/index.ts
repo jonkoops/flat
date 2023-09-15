@@ -1,11 +1,15 @@
-function isBuffer (obj) {
+function isBuffer (obj: any): obj is Buffer {
   return obj &&
     obj.constructor &&
     (typeof obj.constructor.isBuffer === 'function') &&
     obj.constructor.isBuffer(obj)
 }
 
-function keyIdentity (key) {
+function isObject (obj: any): obj is Object {
+  return obj && typeof obj === 'object' && obj !== null
+}
+
+function keyIdentity<T>(key: T) {
   return key
 }
 

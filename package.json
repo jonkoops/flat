@@ -3,32 +3,33 @@
   "version": "6.0.0",
   "type": "module",
   "bin": {
-    "flat": "cli.js"
+    "flat": "lib/cli.js"
   },
   "exports": {
     ".": {
       "import": {
-        "types": "./index.d.ts",
-        "default": "./index.js"
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
       }
     }
   },
   "files": [
-    "cli.js",
-    "index.js",
-    "index.d.ts"
+    "lib"
   ],
   "sideEffects": false,
   "engines": {
     "node": ">=18"
   },
   "scripts": {
-    "test": "node --test && standard cli.js index.js test/test.js"
+    "test": "node --test && standard cli.js index.js test/test.js",
+    "build": "tsc --project tsconfig.build.json"
   },
   "license": "BSD-3-Clause",
   "description": "Take a nested Javascript object and flatten it, or unflatten an object with delimited keys",
   "devDependencies": {
-    "standard": "^17.1.0"
+    "@types/node": "^20.6.1",
+    "standard": "^17.1.0",
+    "typescript": "^5.2.2"
   },
   "repository": {
     "type": "git",

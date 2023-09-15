@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-import fs from 'node:fs'
-import path from 'node:path'
-import readline from 'node:readline'
+import * as fs from 'node:fs'
+import * as path from 'node:path'
+import * as readline from 'node:readline'
 import { flatten } from './index.js'
 
 const filepath = process.argv.slice(2)[0]
